@@ -25,6 +25,24 @@ class ZigzagConversion:
 
         return result
 
+    def convert(self, s: str, numRows: int) -> str:
+        result = [""] * (numRows + 1)
+        up = False
+        row = 1
+
+        for c in s:
+            result[row] += c
+            if up:
+                row -= 1
+            else:
+                row += 1
+
+            if row == numRows:
+                up = True
+            elif row == 1:
+                up = False
+        return ''.join(result)
+
 
 if __name__ == '__main__':
     init = ZigzagConversion()
