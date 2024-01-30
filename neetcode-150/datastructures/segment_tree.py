@@ -76,8 +76,8 @@ class SegmentTree:
         self.root = self.build_tree(nums, 0, len(nums) - 1)
 
     def build_tree(self, nums, low, high):
-        if low > high:
-            return
+        # if low > high:
+        #     return
         node = TreeNode(low, high)
         if low == high:
             node.sum = nums[low]
@@ -119,7 +119,8 @@ class SegmentTree:
             return self.query(left, right, node.left)
         elif left >= mid + 1:
             return self.query(left, right, node.right)
-        return self.query(left, mid, node.left) + self.query(mid + 1, right, node.right)
+        else:
+            return self.query(left, mid, node.left) + self.query(mid + 1, right, node.right)
 
 
 if __name__ == '__main__':

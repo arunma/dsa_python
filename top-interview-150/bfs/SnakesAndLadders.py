@@ -20,7 +20,8 @@ class SnakesAndLadders:
                 label += 1
             cols.reverse()
 
-        queue = deque([(1, 0)])
+        # print(label_to_rc)
+        queue = deque([(1, 0)])  # curr, dist
         seen = set()
         while queue:
             curr, dist = queue.popleft()
