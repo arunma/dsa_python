@@ -11,6 +11,8 @@ class CoinChange:
             for amt in range(1, amount + 1):
                 if amt >= coin:
                     dp[amt] = min(dp[amt], dp[amt - coin] + 1)
+            print(dp)
+
         return dp[-1] if dp[-1] != sys.maxsize else -1
 
 
