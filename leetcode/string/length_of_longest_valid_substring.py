@@ -3,19 +3,20 @@ from typing import *
 
 class LengthOfLongestValidSubstring:
     def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
-        return self.longest_valid_substring(word, forbidden, 0, "")
-
-    def longest_valid_substring(self, word, forbidden):
-        if not word:
-            return 0
-        if word in forbidden:
-            return 0
-        max_count = float('-inf')
-        for ii in range(len(word)):
-            with_count = self.longest_valid_substring(word[], forbidden)
-            without_count = self.longest_valid_substring(word, forbidden, i + 1, curr)
-            max_count = max(max_count, with_count, without_count)
-        return max_count
+        ws = 0
+        max_len = float('-inf')
+        max_word = ""
+        for we in range(len(word)):
+            for i in range(max(ws, we - 10), we + 1):
+                print(f"i: {i}, we: {we}")
+                if word[i:we + 1] in forbidden:
+                    ws = i + 1
+                    break
+                max_word = max(max_word, word[ws:i + 1], key=len)
+                max_len = max(max_len, i - ws + 1)
+            print("----")
+        print(f"maxword: {max_word}")
+        return max_len
 
 
 if __name__ == '__main__':

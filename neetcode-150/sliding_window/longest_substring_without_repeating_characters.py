@@ -23,3 +23,4 @@ if __name__ == '__main__':
     print(init.lengthOfLongestSubstring(s="bbbbb"))  # 1
     print(init.lengthOfLongestSubstring(s="pwwkew"))  # 3
     print(init.lengthOfLongestSubstring(s=""))  # 0
+    print(init.lengthOfLongestSubstring(s=" "))  # 1
